@@ -40,26 +40,24 @@ def calc_order_param(Nos,theta):
 
 np.random.seed(3) 
   
-K=.70
+K=.8
 Nosc=60
 dt = .1
 
 theta0 = np.random.uniform(0.0,2.0*pi,Nosc)
-omega0 = np.random.uniform(.5,1.0,Nosc)
-#omega0 = np.append(np.random.uniform(0.,1.0,Nosc/2),omega0)
-
-
-tp=250
+#omega0 = np.random.uniform(0.9,1.0,Nosc)
+omega0 = np.random.normal(1.0, 0.1, Nosc)
+print omega0
 theta=theta0
 DthetaDt=np.zeros(Nosc)
 thetas=[]
 Dthetas=[]
 average_activity=[]
 r_prev,psi_prev=calc_order_param(Nosc,theta0)
-for t in range(1500):
+for t in range(1000):
     DthetaDt = derives(Nosc,K,theta,omega0)
     r,psi=calc_order_param(Nosc,theta)
-#    if (t==tp):# or t==250 or t == 360 or t==410 or t==450 or t== 520):
+#    if (t==250):# or t==250 or t == 360 or t==410 or t==450 or t== 520):
 #        DthetaDt = DthetaDt - 5.*np.sin(theta)
 #    if (abs( np.cos(psi)+ 0.7 )<0.01):
 #        if (np.cos(psi)<np.cos(psi_prev)):
@@ -78,10 +76,7 @@ for t in range(1500):
     thetas.append(time_theta)
     Dthetas.append(time_Dtheta)
 
-filename='theta_tp={:08.4}'.format(tp*dt)
-extension="_.txt"
-filename=filename+extension
-file_theta=open(filename,"w+")
+file_theta=open("theta.txt","w+")
 np.savetxt(file_theta,thetas)
 file_theta.close()
 

@@ -16,13 +16,10 @@ def calc_order_param(Nos,theta):
     psi = np.arccos(real_sum/r)
     return r,psi
 
-tp=250
-dt=0.1
-filename='theta_tp={:08.4}'.format(tp*dt)
-extension="_.txt"
-filename=filename+extension
 
-theta=np.loadtxt(filename)
+
+
+theta=np.loadtxt('theta.txt')
 Nosc=np.shape(np.transpose(theta))[0]-1
 Ntime=np.shape(np.transpose(theta))[1]
 
@@ -34,6 +31,7 @@ order_param_psi=np.zeros(Ntime)
 for t in range(Ntime):
     order_param_r[t],order_param_psi[t]=calc_order_param(Nosc,theta[t])
 
+
 theta = np.transpose(theta)
 time=theta[0]
 theta=theta[1:]
@@ -42,22 +40,15 @@ theta=theta[1:]
 plt.figure(1)
 for i in range(Nosc):
     plt.plot(time,np.sin(theta[i]))
-temp_string="{:2}".format(Nosc)
-temp_string=r'$\theta_i$,  i $\in$ {1,...,'+temp_string+'}'
-plt.ylabel(temp_string)
 
 
-#Dtheta=np.loadtxt('Dtheta.txt')
-#Dtheta = np.transpose(Dtheta)
-#Dtheta=Dtheta[1:]
-#plt.figure(2)
-#for i in range(Nosc):
-#    plt.plot(time,Dtheta[i])
-#
-#temp_string="{:2}".format(Nosc)
-#temp_string=r'$\dot{\theta_i}$,  i $\in$ {1,...,'+temp_string+'}'
-#plt.ylabel(temp_string)
 
+Dtheta=np.loadtxt('Dtheta.txt')
+Dtheta = np.transpose(Dtheta)
+Dtheta=Dtheta[1:]
+plt.figure(2)
+for i in range(Nosc):
+    plt.plot(time,Dtheta[i])
 
 
 #plt.figure(3)
@@ -89,18 +80,20 @@ plt.ylabel(temp_string)
 
 avr_activity=np.loadtxt('avr_activity.txt')
 plt.figure(6)
-plt.ylabel(r'$f$ (average activity)')
 plt.plot(time,avr_activity)
 
 plt.figure(7)
 plt.plot(time,order_param_r)
-plt.ylabel(r'$r$ (order parameter)')
+plt.ylabel('order param r')
 
-#plt.figure(8)
-#plt.subplot(211)
-#plt.plot(time,np.sin(order_param_psi))
-#plt.subplot(212)
-#plt.plot(time,np.cos(order_param_psi))
+plt.figure(8)
+plt.subplot(211)
+plt.plot(time,np.sin(order_param_psi))
+plt.subplot(212)
+plt.plot(time,np.cos(order_param_psi))
 
 
+adj_matrix=np.loadtxt('adj_matrix.txt')
+plt.figure(12)
+plt.matshow(adj_matrix)
 plt.show()
