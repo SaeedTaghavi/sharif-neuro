@@ -18,7 +18,6 @@ def calc_order_param(Nos,theta):
 
 
 theta=np.loadtxt('theta.txt')
-theta_stim=np.loadtxt('theta_stim.txt')
 Nosc=np.shape(np.transpose(theta))[0]-1
 Ntime=np.shape(np.transpose(theta))[1]
 
@@ -34,8 +33,6 @@ for t in range(Ntime):
 theta = np.transpose(theta)
 time=theta[0]
 theta=theta[1:]
-theta_stim = np.transpose(theta_stim)
-theta_stim=theta_stim[1:]
 
 
 plt.figure(1)
@@ -51,9 +48,6 @@ Dtheta=np.loadtxt('Dtheta.txt')
 Dtheta = np.transpose(Dtheta)
 Dtheta=Dtheta[1:]
 
-Dtheta_stim=np.loadtxt('Dtheta_stim.txt')
-Dtheta_stim = np.transpose(Dtheta_stim)
-Dtheta_stim=Dtheta_stim[1:]
 plt.figure(2)
 for i in range(Nosc):
     plt.plot(time,Dtheta[i])

@@ -17,7 +17,7 @@ def calc_order_param(Nos,theta):
     return r,psi
 
 
-theta=np.loadtxt('theta.txt')
+theta=np.loadtxt('theta_stim.txt')
 Nosc=np.shape(np.transpose(theta))[0]-1
 Ntime=np.shape(np.transpose(theta))[1]
 
@@ -42,14 +42,9 @@ temp_string="{:2}".format(Nosc)
 temp_string=r'$\theta_i$,  i $\in$ {1,...,'+temp_string+'}'
 plt.ylabel(temp_string)
 
-
-plt.figure(7)
-plt.plot(time,order_param_r)
-plt.ylabel(r'$r$ (order param)')
-
 #plt.show();exit()
 
-Dtheta=np.loadtxt('Dtheta.txt')
+Dtheta=np.loadtxt('Dtheta_stim.txt')
 Dtheta = np.transpose(Dtheta)
 Dtheta=Dtheta[1:]
 
@@ -96,6 +91,9 @@ plt.figure(6)
 plt.plot(time,avr_activity)
 plt.ylabel(r'$f$ (average activity)')
 
+plt.figure(7)
+plt.plot(time,order_param_r)
+plt.ylabel(r'$r$ (order param)')
 
 plt.figure(8)
 plt.subplot(211)
