@@ -37,8 +37,8 @@ def calc_order_param(Nos,theta):
     psi = np.arccos(real_sum/r)
     return r,psi
 
-K=np.linspace(0.0,1.0,50)
-Nosc=60
+K=np.linspace(0.0,1.0,20)
+Nosc=50
 dt = .1
 
 for kk in range(np.size(K)):
@@ -47,7 +47,8 @@ for kk in range(np.size(K)):
         np.random.seed(iseed) 
 
         theta0 = np.random.uniform(0.0,2.0*pi,Nosc)
-        omega0 = np.random.uniform(.85,1.0,Nosc)    
+        # omega0 = np.random.uniform(.85,1.0,Nosc)    
+        omega0 = np.random.normal(1.0, 0.1, Nosc)
         tp=250
         theta=theta0
         DthetaDt=np.zeros(Nosc)
@@ -56,10 +57,10 @@ for kk in range(np.size(K)):
         average_activity=[]
         r_prev,psi_prev=calc_order_param(Nosc,theta0)
         ten_last_r=[]
-        for t in range(500):
+        for t in range(300):
             DthetaDt = derives(Nosc,K[kk],theta,omega0)
             r,psi=calc_order_param(Nosc,theta)
-            if (t>490):
+            if (t>290):
                 ten_last_r.append(r)
     
             psi_prev=psi; r_prev=r
@@ -71,7 +72,7 @@ for kk in range(np.size(K)):
             thetas.append(time_theta)
             Dthetas.append(time_Dtheta)
         r_mean[iseed]=np.mean(ten_last_r)
-    print    K[kk],"   ",    np.mean(r_mean)
+    print(    K[kk],"   ",    np.mean(r_mean))
     #print( K[kk] , rmean )
     #    filename='theta_tp={:08.4}'.format(tp*dt)
     #    extension="_.txt"
