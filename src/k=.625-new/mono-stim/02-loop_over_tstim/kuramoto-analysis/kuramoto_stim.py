@@ -39,7 +39,7 @@ def calc_order_param(Nos,theta):
 
 
 
-K=.8
+K=.45
 Nosc=50
 dt = 0.1
 np.random.seed(3) 
