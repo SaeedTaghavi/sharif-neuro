@@ -45,8 +45,15 @@ theta_stim=theta_stim[1:]
 
 
 plt.figure(1)
+plt.subplot(211)
 for i in range(Nosc):
     plt.plot(time,np.sin(theta[i]))
+temp_string="{:2}".format(Nosc)
+temp_string=r'$\theta_i$,  i $\in$ {1,...,'+temp_string+'}'
+plt.ylabel(temp_string)
+
+plt.subplot(212)
+for i in range(Nosc):
     plt.plot(time,np.sin(theta_stim[i]))
 temp_string="{:2}".format(Nosc)
 temp_string=r'$\theta_i$,  i $\in$ {1,...,'+temp_string+'}'
@@ -62,17 +69,25 @@ Dtheta_stim=np.loadtxt('Dtheta_stim.txt')
 Dtheta_stim = np.transpose(Dtheta_stim)
 Dtheta_stim=Dtheta_stim[1:]
 plt.figure(2)
+plt.subplot(211)
 for i in range(Nosc):
     plt.plot(time,Dtheta[i])
-#    plt.plot(time,Dtheta_stim[i])
+temp_string="{:2}".format(Nosc)
+temp_string=r'$\dot{\theta_i}$,  i $\in$ {1,...,'+temp_string+'}'
+plt.ylabel(temp_string)
+
+plt.subplot(212)
+for i in range(Nosc):
+   plt.plot(time,Dtheta_stim[i])
 temp_string="{:2}".format(Nosc)
 temp_string=r'$\dot{\theta_i}$,  i $\in$ {1,...,'+temp_string+'}'
 plt.ylabel(temp_string)
 
 
 plt.figure(7)
-plt.plot(time,order_param_r)
-plt.plot(time,order_param_r_stim)
+plt.plot(time,order_param_r,label='not stimulated')
+plt.plot(time,order_param_r_stim,label='stimulated')
+plt.legend()
 plt.ylabel(r'$r$ (order param)')
 
 
