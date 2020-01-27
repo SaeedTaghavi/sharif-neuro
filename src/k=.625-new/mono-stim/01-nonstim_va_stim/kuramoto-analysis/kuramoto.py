@@ -40,7 +40,7 @@ def calc_order_param(Nos,theta):
 
 np.random.seed(3) 
   
-K=.8
+K=.45
 Nosc=50
 dt = 0.1
 
@@ -61,13 +61,13 @@ Dthetas_stim=[]
 average_activity_stim=[]
 r_prev_stim,psi_prev_stim=calc_order_param(Nosc,theta0)
 
-for t in range(500):
+for t in range(1000):
     DthetaDt = derives(Nosc,K,theta,omega0)
     r, psi = calc_order_param(Nosc,theta)
 
     DthetaDt_stim = derives(Nosc,K,theta_stim,omega0)
     r_stim, psi_stim = calc_order_param(Nosc,theta_stim)
-    if (t==196):# or t==250 or t == 360 or t==410 or t==450 or t== 520):
+    if (t==260 or t==325 or t==386 or t == 447 or t == 508 or t==572 or t==635):
         DthetaDt_stim = DthetaDt_stim - 5.*np.sin(theta_stim)
 #    if (abs( np.cos(psi)+ 0.7 )<0.01):
 #        if (np.cos(psi)<np.cos(psi_prev)):
