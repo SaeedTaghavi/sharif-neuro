@@ -38,7 +38,7 @@ def calc_order_param(Nos,theta):
     return r,psi
 
 K=np.linspace(0.0,1.0,20)
-Nosc=1000
+Nosc=100
 dt = .1
 
 for kk in range(np.size(K)):
