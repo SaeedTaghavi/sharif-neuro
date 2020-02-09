@@ -55,8 +55,8 @@ average_activity=[]
 r_prev,psi_prev=calc_order_param(Nosc,theta0)
 for t in range(500):
     DthetaDt = derives(Nosc,K,theta,omega0)
-#    if (t==260 or t==330 or t == 385):# or t==410 or t==450 or t== 520):
-#        DthetaDt = DthetaDt - 5.*np.sin(theta)
+    if (t==260 or t==330 or t == 385):# or t==410 or t==450 or t== 520):
+        DthetaDt = DthetaDt - 5.*np.sin(theta)
     r,psi=calc_order_param(Nosc,theta)
 #    if (abs( np.cos(psi)+ 0.7 )<0.01):
 #        if (np.cos(psi)<np.cos(psi_prev)):
@@ -75,14 +75,14 @@ for t in range(500):
     thetas.append(time_theta)
     Dthetas.append(time_Dtheta)
 
-file_theta=open("theta.txt","w+")
+file_theta=open("theta_stim.txt","w+")
 np.savetxt(file_theta,thetas)
 file_theta.close()
 
-file_Dtheta=open("Dtheta.txt","w+")
+file_Dtheta=open("Dtheta_stim.txt","w+")
 np.savetxt(file_Dtheta,Dthetas)
 file_Dtheta.close()
 
-file_avr_activity=open("avr_activity.txt","w+")
+file_avr_activity=open("avr_activity_stim.txt","w+")
 np.savetxt(file_avr_activity,average_activity)
 file_avr_activity.close()

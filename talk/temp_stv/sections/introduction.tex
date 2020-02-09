@@ -1,0 +1,198 @@
+
+\section{Introduction}
+
+%\subsection{The Model and the Problem}
+\subsection{The Problem}
+
+\begin{frame}{Neural synchrony in brain disorders}
+
+
+Certain brain disorders are associated with abnormaly neural synchronization.
+%  Dysfunctional communication resulting from an inability to properly modulate oscillatory activity, either through hypo- or hyper-synchrony, has been implicated in a number of neurological disorders.
+%In Parkinson's disease (PD), movement impairment is correlated with exaggerated beta frequency oscillations in the cerebral cortex and subthalamic numcleus(STN).
+%There is evidence for enhanced synchronized $\beta$-band activity prior to movement preparation and during visuo-motor coordination.
+\\
+  \begin{block}{remember}
+      Shanon entropy\\
+      \begin{equation*}
+        H=\Sigma_{i=1}^{N} -p_{i}\log(p_{i})
+      \end{equation*}
+  \end{block}
+\end{frame} 
+
+\begin{frame}[t]{General formalization of haplotyping.}
+  \begin{block}{Inputs}
+    \begin{itemize}
+    \item A \alert{genotype matrix} $G$.
+    \item The \alert{rows} of the matrix are \alert{taxa / individuals}.
+    \item The \alert{columns} of the matrix are \alert{SNP sites /
+        characters}. 
+    \end{itemize}
+  \end{block}
+  \begin{block}{Outputs}
+    \begin{itemize}
+    \item A \alert{haplotype matrix} $H$.
+    \item Pairs of rows in $H$ \alert{explain} the rows of $G$.
+    \item The haplotypes in $H$ are \alert{biologically plausible}. 
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}[t]{Our formalization of haplotyping.}
+  \begin{block}{Inputs}
+    \begin{itemize}
+    \item A genotype matrix $G$.
+    \item The rows of the matrix are individuals / taxa.
+    \item The columns of the matrix are SNP sites / characters.
+    \item<alert@1->
+      The problem is directed: one haplotype is known.
+    \item<alert@1->
+      The input is biallelic: there are only two homozygous
+      states (0 and 1) and one heterozygous state (2).
+    \end{itemize}
+  \end{block}
+  \begin{block}{Outputs}
+    \begin{itemize}
+    \item A haplotype matrix $H$.
+    \item Pairs of rows in $H$ explain the rows of $G$.
+    \item<alert@1> The haplotypes in $H$ form a perfect phylogeny.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{We can do perfect phylogeny haplotyping efficiently, but
+    \dots}
+  \begin{enumerate}
+  \item \alert{Data may be missing.}
+    \begin{itemize}
+    \item This makes the problem NP-complete \dots
+    \item \dots even for very restricted cases.
+    \end{itemize}
+    \textcolor{green!50!black}{Solutions:}
+    \begin{itemize}
+    \item Additional assumption like the rich data hypothesis. 
+    \end{itemize}
+  \item \alert{No perfect phylogeny is possible.}
+    \begin{itemize}
+    \item This can be caused by chromosomal crossing-over effects.
+    \item This can be caused by incorrect data.
+    \item This can be caused by multiple mutations at the same sites.
+    \end{itemize}
+    \textcolor{green!50!black}{Solutions:}
+    \begin{itemize}
+    \item Look for phylogenetic networks.
+    \item Correct data.
+    \item<alert@1->
+       Find blocks where a perfect phylogeny is possible.
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+
+\subsection{The Integrated Approach}
+
+\begin{frame}{How blocks help in perfect phylogeny haplotyping.}
+  \begin{enumerate}
+  \item Partition the site set into overlapping contiguous blocks.
+  \item Compute a perfect phylogeny for each block and combine them.
+  \item Use dynamic programming for finding the partition.
+  \end{enumerate}
+
+  \begin{tikzpicture}
+    \useasboundingbox (0,-1) rectangle (10,2);
+    
+    \draw[line width=2mm,dash pattern=on 1mm off 1mm]
+      (0,1) -- (9.99,1) node[midway,above] {Genotype matrix}
+      (0,0.6666) -- (9.99,0.6666)
+      (0,0.3333) -- (9.99,0.3333)
+      (0,0) -- (9.99,0) node[midway,below] {\only<1>{no perfect phylogeny}};
+
+    \begin{scope}[xshift=-.5mm]
+      \only<2->
+      {
+        \draw[red,block]            (0,.5)   -- (3,.5)
+          node[midway,below] {perfect phylogeny};
+      }
+        
+      \only<3->
+      {
+        \draw[green!50!black,block] (2.5,.5)   -- (7,.5)
+          node[pos=0.6,below] {perfect phylogeny};
+      }
+
+      \only<4->
+      {
+        \draw[blue,block]           (6.5,.5) -- (10,.5)
+          node[pos=0.6,below] {perfect phylogeny};
+      }
+    \end{scope}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Objective of the integrated approach.}
+  \begin{enumerate}
+  \item Partition the site set into \alert{noncontiguous} blocks. 
+  \item Compute a perfect phylogeny for each block and combine them. 
+  \item<alert@1-> Compute partition while computing perfect
+    phylogenies. 
+  \end{enumerate}
+
+  \begin{tikzpicture}
+    \useasboundingbox (0,-1) rectangle (10,2);
+
+    \draw[line width=2mm,dash pattern=on 1mm off 1mm]
+      (0,1) -- (9.99,1) node[midway,above] {Genotype matrix}
+      (0,0.6666) -- (9.99,0.6666)
+      (0,0.3333) -- (9.99,0.3333)
+      (0,0) -- (9.99,0) node[midway,below] {\only<1>{no perfect phylogeny}};
+
+    \only<2->
+    {
+      \begin{scope}[xshift=-0.5mm]
+        \draw[red,block] (0,.5)   -- (3,.5) 
+          node[midway,below] {perfect phylogeny}
+                         (8,.5) -- (9,.5);
+
+        \draw[green!50!black,block]
+          (3,.5)   -- (6,.5)
+            node[pos=0.6,below] {perfect phylogeny}
+          (6.4,.5)   -- (8,.5)
+          (9,.5) -- (10,.5);
+
+        \draw[blue,block] (6,.5) -- (6.4,.5)
+          node[midway,below=5mm] {perfect phylogeny};
+      \end{scope}
+    }
+  \end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{The formal computational problem.}
+  We are interested in the computational complexity of \\
+  \alert{the function \alert{$\chi_{\operatorname{PP}}$}}:
+  \begin{itemize}
+  \item It gets genotype matrices as input.
+  \item It maps them to a number $k$.
+  \item This number is minimal such that the sites can be
+    covered by $k$ sets, each admitting a perfect phylogeny.
+    \\
+    (We call this a \alert{pp-partition}.)
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Phase Response Curve}
+\begin{frame}{The Phase Response Curve (PRC)}
+  We are interested in the computational complexity of \\
+  \alert{the function \alert{$\chi_{\operatorname{PP}}$}}:
+  \begin{itemize}
+  \item It gets genotype matrices as input.
+  \item It maps them to a number $k$.
+  \item This number is minimal such that the sites can be
+    covered by $k$ sets, each admitting a perfect phylogeny.
+    \\
+    (We call this a \alert{pp-partition}.)
+  \end{itemize}
+\end{frame}

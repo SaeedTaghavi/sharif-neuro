@@ -1,0 +1,90 @@
+% Copyright 2019 by Saeed Taghavi
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\documentclass{beamer}
+
+% Setup appearance:
+
+\usetheme{Darmstadt}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+
+
+% Standard packages
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+
+% Setup TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+
+% Author, Title, etc.
+
+\title[Short title] 
+{%
+Phase-Dependent Suppression of Neuronal Oscillations
+%
+}
+
+\author[Taghavi, Valizadeh]
+{
+  \textcolor{blue!50!black}{Saeed~Taghavi\inst{1}} \and
+  Alireza~Valizadeh\inst{1,2}
+}
+
+\institute[IASBS and others]
+{
+  \inst{1}%
+  IASBS, Zanjan, Iran
+  \and
+  \vskip-2mm
+  \inst{2}%
+  IPM, Tehran, Iran
+}
+
+\date[neurophysics 2020]
+{Conference on Neuroscience \\ and Physics of Neuronal Systems \\ 19 and 20 February 2020
+\\
+}
+
+
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+%inja
+
+\input{sections/introduction}
+
+\input{sections/section1}
+\input{sections/section2}
+\input{sections/summary}
+\input{sections/appendix}
+\end{document}
+
+

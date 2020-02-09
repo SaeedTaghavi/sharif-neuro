@@ -62,5 +62,33 @@ plt.xlabel('Time')
 plt.ylabel('Trigger')
 plt.savefig('phase-locked-dbs.png')
 
-plt.show()
+
+label_font_size=30
+
+plt.figure(figsize=(15,12))
+plt.subplot(311)
+plt.plot(x,y)
+plt.hlines(amp_thershold,x[0],x[-1])
+plt.xticks([])
+plt.yticks([])
+#plt.xlabel('Time')
+#plt.ylabel('Oscillating Parameter',fontsize=label_font_size)
+plt.ylabel('Activity',fontsize=label_font_size)
+
+plt.subplot(312)
+plt.plot(x,stim_amp)
+plt.xticks([])
+plt.yticks([])
+plt.ylabel('Adaptive DBS',fontsize=label_font_size)
+
+
+plt.subplot(313)
+plt.plot(x,stim_phase)
+plt.xticks([])
+plt.yticks([])
+plt.xlabel('Time',fontsize=label_font_size)
+plt.ylabel(r'Phase-locked DBS',fontsize=label_font_size-5)
+
+plt.savefig('all.png')
+#plt.show()
 
