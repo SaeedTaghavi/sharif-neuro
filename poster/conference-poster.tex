@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% baposter Landscape Poster
+% LaTeX Template
+% Version 1.0 (11/06/13)
+%
+% baposter Class Created by:
+% Brian Amberg (baposter@brian-amberg.de)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a1paper,fontscale=0.5]{baposter} % Adjust the font scale/size here
+\usepackage{mathtools}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage[leftcaption]{sidecap}
+\usepackage{lineno}
+\usepackage{setspace}
+
+\usepackage{graphicx} % Required for including images
+%\graphicspath{{fig/}} % Directory in which figures are stored
+
+\usepackage{amsmath} % For typesetting math
+\usepackage{amssymb} % Adds new symbols to be used in math mode
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
+\usepackage{palatino} % Use the Palatino font
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{multicol} % Required for multiple columns
+\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+\setlength{\columnseprule}{0mm} % No horizontal rule between columns
+
+\usepackage{booktabs}
+
+\usepackage{verbatim}
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage{cinzel}
+%\usepackage{arev}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz} % Required for flow chart
+\usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+\newcommand{\numberofreceptors}{ 28 }
+\newcommand{\bonferroni}{ 11 }
+\newcommand{\fdr}{ 26 }
+\newcommand{\nocorrection}{ 2 }
+
+\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+\setlength{\itemsep}{1pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}
+
+\definecolor{shadelightest}{rgb}{1, 0.86, 0.67} 
+\definecolor{shadelighter}{rgb}{0.831, 0.655, 0.416} 
+
+\definecolor{shade}{rgb}{0.667, 0.475, 0.224} 
+
+\definecolor{shadedarker}{rgb}{0.502, 0.322, 0.082} 
+\definecolor{shadedarkest}{rgb}{0.11, 0.095, 0.0} 
+
+
+\usepackage{graphicx}
+\begin{document}
+
+\begin{poster}
+{
+headerborder=closed, % Adds a border around the header of content boxes
+colspacing=1em, % Column spacing
+bgColorOne=white, % Background color for the gradient on the left side of the poster
+bgColorTwo=white, % Background color for the gradient on the right side of the poster
+borderColor=shade, % Border color
+headerColorOne=shadelightest, % Background color for the header in the content boxes (left side)
+headerColorTwo=shadelightest, % Background color for the header in the content boxes (right side)
+headerFontColor=shadedarkest, % Text color for the header text in the content boxes
+boxColorOne=white, % Background color of the content boxes
+textborder=rectangle, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+headerheight=0.1\textheight, % Height of the header
+headershape=rectangle, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+linewidth=2pt % Width of the border lines around content boxes
+}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+%
+{\includegraphics[height=4em]{fig/iasbslogo}} % First university/lab logo on the left
+{\huge \textsc{Phase-Dependent Suppression of Neuronal Oscillations}} % Poster title
+{\textsc{ Alireza Valizadeh, \bf{Saeed Taghavi} \vspace{0.5em} }(s.taghavi@iasbs.ac.ir)}
+{\includegraphics[height=5em]{fig/sharif-logo-jpg}} % First university/lab logo on the 
+
+%\affiliation{G. Mill\'an Institute of Fluid Dynamics, Nanoscience and Industrial
+%Mathematics, Universidad Carlos III de Madrid, Spain}
+
+\input{introduction}
+\input{section1}
+\input{section2}
+\small{
+\input{reference}
+}
+
+
+
+
+
+
+
+
+\end{poster}
+
+\end{document}

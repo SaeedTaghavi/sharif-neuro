@@ -1,0 +1,28 @@
+
+\headerbox{Numerical results}{name=results1,column=0,below=introduction,span=3}{
+
+\begin{multicols}{2}
+
+\large{
+To model the neuronal populations that generate pathological oscillations, we have used a network of $N=1000$ coupled oscillators . The time evolution of the set of each oscillator is given by the Kyramoto equations
+\begin{center}
+$ \qquad \qquad \qquad  \frac{d\theta_{i}}{dt}=\omega_i + \frac{k}{N} \Sigma_{j=1}^N \sin (\theta_j - \theta_i) + I X(t) Z(\theta_i)$
+\end{center}
+%$ \qquad \qquad \qquad  \frac{d\theta_{i}}{dt}=\omega_i + \frac{k}{N} \Sigma_{j=1}^N \sin (\theta_j - \theta_i) + I X(t) Z(\theta_i)$
+
+The first term, $\omega_i$ is the natural frequency of oscillator $i$, which describes the frequency in the absence of external inputs. It corresponds to the frequency with which a neuron spontaneously produces spikes or bursts (depending of the interpretation of oscillators introduced above). The second term describes the interactions between oscillators, where $k$ is the coupling constant which controls the strength of coupling between each pair of oscillators and hence their tendency to synchronize. The third term describes the effect of stimulation. The intensity of stimulation is denoted by $I$ and $X(t)$ is a function which equals $1$ if stimulation is applied at time $t$ and $0$ otherwise. The phase response function for a single oscillator is denoted by $Z(\theta_i )$.
+\\
+The intensity of stimulation was chosen to be $I \approx 5$  Numerical integration was performed using Euler method with a time step of $dt \approx 0.01 $. 
+\begin{center}
+\includegraphics[width=0.65\linewidth]{fig/order_param1} 
+\end{center}
+}
+\center{
+%\vspace*{-.5cm}
+\includegraphics[width=0.9\linewidth]{fig/theta-main} 
+}
+\end{multicols}
+
+%\vspace{1.15cm}
+%\vspace{2cm} %remove this, only added for spacing
+}

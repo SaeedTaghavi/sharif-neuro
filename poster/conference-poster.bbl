@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+
+\bibitem{asllani2018minimally}
+Malbor Asllani, Paul Expert, and Timoteo Carletti.
+\newblock A minimally invasive neurostimulation method for controlling abnormal
+  synchronisation in the neuronal activity.
+\newblock {\em PLoS computational biology}, 14(7):e1006296, 2018.
+
+\bibitem{holt2019phase}
+Abbey~B Holt, Eszter Kormann, Alessandro Gulberti, Monika P{\"o}tter-Nerger,
+  Colin~G McNamara, Hayriye Cagnan, Magdalena~K Baaske, Simon Little,
+  Johannes~A K{\"o}ppen, Carsten Buhmann, et~al.
+\newblock Phase-dependent suppression of beta oscillations in parkinson's
+  disease patients.
+\newblock {\em Journal of Neuroscience}, 39(6):1119--1134, 2019.
+
+\bibitem{weerasinghe2019predicting}
+Gihan Weerasinghe, Benoit Duchet, Hayriye Cagnan, Peter Brown, Christian Bick,
+  and Rafal Bogacz.
+\newblock Predicting the effects of deep brain stimulation using a reduced
+  coupled oscillator model.
+\newblock {\em PLoS computational biology}, 15(8):e1006575, 2019.
+
+\bibitem{ko2009phase}
+Tae-Wook Ko and G~Bard Ermentrout.
+\newblock Phase-response curves of coupled oscillators.
+\newblock {\em Physical Review E}, 79(1):016211, 2009.
+
+\bibitem{holt2016phasic}
+Abbey~B Holt, Dan Wilson, Max Shinn, Jeff Moehlis, and Theoden~I Netoff.
+\newblock Phasic burst stimulation: a closed-loop approach to tuning deep brain
+  stimulation parameters for parkinson's disease.
+\newblock {\em PLoS computational biology}, 12(7), 2016.
+
+\bibitem{holt2015closed}
+Abbey~B Holt, Max Shinn, and Theoden~I Netoff.
+\newblock Closed-loop approach to tuning deep brain stimulation parameters for
+  parkinson's disease.
+\newblock {\em BMC neuroscience}, 16(1):F2, 2015.
+
+\end{thebibliography}
