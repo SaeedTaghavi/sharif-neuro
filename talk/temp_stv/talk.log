@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.15)  9 FEB 2020 09:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.15)  9 FEB 2020 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -971,22 +971,29 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
 ) [2
 
 ]
-(./sections/introduction.tex [3
+(./sections/introduction.tex
+<./img/EToscil.png, id=192, 1754.555pt x 652.4375pt>
+File: ./img/EToscil.png Graphic file (type png)
+<use ./img/EToscil.png>
+Package pdftex.def Info: ./img/EToscil.png  used on input line 23.
+(pdftex.def)             Requested size: 307.28987pt x 114.26787pt.
+ [3
 
-] [4
+ <./img/EToscil.png>] [4
 
 ] [5
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 90.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 93.
  [6
 
 ] [7
 
 ] [8
 
-] [9
+]
+[9
 
 ] [10
 
@@ -994,8 +1001,7 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 
 ] [12
 
-]
-[13
+] [13
 
 ] [14
 
@@ -1010,7 +1016,8 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 
 ] [18
 
-] [19
+]
+[19
 
 ] [20
 
@@ -1018,8 +1025,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 
 ] [22
 
-])
-(./sections/section2.tex [23
+]) (./sections/section2.tex [23
 
 ] [24
 
@@ -1027,10 +1033,10 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 
 ] [26
 
-]) (./sections/summary.tex [27
+])
+(./sections/summary.tex [27
 
-]
-[28
+] [28
 
 ]) (./sections/appendix.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
@@ -1041,7 +1047,8 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
 
 ] [31
 
-] [32
+]
+[32
 
 ] [33
 
@@ -1064,11 +1071,11 @@ Package rerunfilecheck Info: File `talk.out' has not changed.
 (rerunfilecheck)             Checksum: 68272BC615201CC8CA13EA21D64B09BD;857.
  ) 
 Here is how much of TeX's memory you used:
- 21695 strings out of 492982
- 426336 string characters out of 6134896
- 541573 words of memory out of 5000000
- 24666 multiletter control sequences out of 15000+600000
- 56497 words of font info for 74 fonts, out of 8000000 for 9000
+ 21696 strings out of 492982
+ 426282 string characters out of 6134896
+ 541563 words of memory out of 5000000
+ 24665 multiletter control sequences out of 15000+600000
+ 55280 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,20n,73p,771b,1642s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1076,14 +1083,13 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
-uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on talk.pdf (33 pages, 159251 bytes).
+public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
+vetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on talk.pdf (33 pages, 1062654 bytes).
 PDF statistics:
- 1063 PDF objects out of 1200 (max. 8388607)
- 963 compressed objects within 10 object streams
+ 1060 PDF objects out of 1200 (max. 8388607)
+ 960 compressed objects within 10 object streams
  84 named destinations out of 1000 (max. 500000)
- 249 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
