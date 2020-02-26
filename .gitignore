@@ -1,4 +1,7 @@
+*.synctex.gz
+*.log
 *.txt
 *.out
 *kooshan*
 *.png
+*temp*
