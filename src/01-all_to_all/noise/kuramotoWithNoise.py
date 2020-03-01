@@ -19,7 +19,7 @@ def calc_order_param(Nosc,theta):
 np.random.seed(1) 
 Nosc = 3
 #Ntime = 1000
-dt =0.01
+dt =0.001
 thetas = []
 times = []
 theta0 = np.random.uniform(0,2*pi,Nosc)
@@ -33,8 +33,8 @@ order_param_r=[]
 order_param_psi=[]
 
 # alpha = .50   # noise st
-alpha = .50   # noise st
-K = 5.0
+alpha = .001   # noise st
+K = .10
 # for ntime in range(1,Ntime):
 ntime=0
 while ( (theta[0] / (2*pi)) < 20 ):
@@ -46,13 +46,16 @@ while ( (theta[0] / (2*pi)) < 20 ):
     thetas.append(theta)
     times.append( dt * ntime )
 
+np.savetxt("K=0.1_thetas", thetas)
+np.savetxt("K=0.1_orderParam", order_param_r)
+np.savetxt("K=0.1_times", times)
 
-thetas=np.transpose(thetas)
-for i in range(Nosc):
-    plt.plot(times,np.sin(thetas[i]))
-plt.plot(times[0:-1],order_param_r,label='order param')
-plt.legend()
-    # plt.plot(times[0:-1],np.sin(order_param_psi))
-plt.show()
+# thetas=np.transpose(thetas)
+# for i in range(Nosc):
+#     plt.plot(times,np.sin(thetas[i]))
+# plt.plot(times[0:-1],order_param_r,label='order param')
+# plt.legend()
+#     # plt.plot(times[0:-1],np.sin(order_param_psi))
+# plt.show()
 
 exit()
