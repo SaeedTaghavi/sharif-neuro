@@ -33,11 +33,15 @@ order_param_r=[]
 order_param_psi=[]
 
 # alpha = .50   # noise st
-alpha = .001   # noise st
+alpha = .01   # noise st
 K = 10.
 # for ntime in range(1,Ntime):
 ntime=0
-while ( (theta[0] / (2*pi)) < 20 ):
+theta_id0 =[theta0[0]]
+theta_id1 =[theta0[1]]
+theta_id2 =[theta0[2]]
+
+while ( (theta[0] / (2*pi)) < 30 ):
     r, psi = calc_order_param(Nosc,theta)
     order_param_r.append(r)
     order_param_psi.append(psi)
@@ -45,10 +49,21 @@ while ( (theta[0] / (2*pi)) < 20 ):
     theta = theta + dt * ( omega + K * r * np.sin(psi-theta)) + alpha * ( np.random.normal( loc = 0.0, scale = np.sqrt(dt), size = Nosc ) )
     thetas.append(theta)
     times.append( dt * ntime )
+    theta_id0.append(theta[0])
+    theta_id1.append(theta[1])
+    theta_id2.append(theta[2])
+    if (ntime%100 == 0 ):
+        plt.plot(times,theta_id0,'r')
+        plt.plot(times,theta_id1,'b')
+        plt.plot(times,theta_id2,'g')
+        plt.plot(times[:-1],order_param_r,'black')
+        plt.show()
 
-np.savetxt("K=0.1_thetas", thetas)
-np.savetxt("K=0.1_orderParam", order_param_r)
-np.savetxt("K=0.1_times", times)
+    
+
+# np.savetxt("K=0.1_thetas", thetas)
+# np.savetxt("K=0.1_orderParam", order_param_r)
+# np.savetxt("K=0.1_times", times)
 
 # thetas=np.transpose(thetas)
 # for i in range(Nosc):
