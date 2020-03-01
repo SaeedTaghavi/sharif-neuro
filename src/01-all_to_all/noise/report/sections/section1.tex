@@ -1,0 +1,86 @@
+\section{Update rule}
+the update rule which I have used is:
+\begin{equation}
+\theta_i^{t_n+1} = \theta_i^{t_n} + dt (\omega_i + K r^{t_n} \sin(\psi^{t_n} - \theta_i^{t_n})) + \alpha \mathcal{N} (0,\sqrt{dt}), \quad i \in \{ 1,...,N_{Osci} \}
+\end{equation}
+Initial phases produced with a random uniform distibution in $[0,2\pi]$.
+\\
+Natural frequencies ($\omega_i$) are all set to be $2\pi$.
+\\
+$\alpha=0.5$
+\\
+$r$ and $\psi$ are respectively the real and the imaginary part of the order parameter at each time step.
+\\
+And I have changed the coupling constant $K$ to be $1,2$ and $5$; stated at each plot.
+
+\begin{figure}
+	\includegraphics[width=.8\textwidth]{1.png}
+	\caption{$K=1$}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{2.png}
+\caption{$K=1$}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{3.png}
+\caption{$K=1$}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=.8\textwidth]{11.png}
+	\caption{$K=2$}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{12.png}
+\caption{$K=2$}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{13.png}
+\caption{$K=2$}
+\end{figure}
+
+
+
+\begin{figure}[hb!]
+	\includegraphics[width=.8\textwidth]{21.png}
+	\caption{$K=5$}
+\end{figure}
+
+\begin{figure}[hb!]
+\includegraphics[width=.8\textwidth]{22.png}
+\caption{$K=5$}
+\end{figure}
+
+\begin{figure}[hb!]
+\includegraphics[width=.8\textwidth]{23.png}
+\caption{$K=5$}
+\end{figure}
+
+
+%produced with a random normal distibution with Mean$=1$ and StandardDeviation=
+%
+%\begin{figure}[ht]
+%  \centering
+%  \begin{minipage}{.7\linewidth}
+%    \begin{algorithm}[H]
+%      \SetAlgoLined
+%      \KwData{this text}
+%      \KwResult{how to write algorithm with \LaTeX2e }
+%      initialization\;
+%      \While{not at end of this document}{
+%        read current\;
+%        \eIf{understand}{
+%          go to next section\;
+%          current section becomes this one\;
+%        }{
+%          go back to the beginning of current section\;
+%        }
+%      }
+%      \caption{How to write algorithms}
+%    \end{algorithm}
+%  \end{minipage}
+%\end{figure}

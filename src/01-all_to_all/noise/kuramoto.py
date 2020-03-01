@@ -23,7 +23,7 @@ def func_average_activity(Nosc,theta):
     f = f / Nosc
     return f
 
-def calc_order_param(Nos,theta):
+def calc_order_param(Nosc,theta):
     real_sum=0.0
     img_sum=0.0
     r=0.0
